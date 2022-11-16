@@ -156,6 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2699ab2d71d04b849af72e2b0369473c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground: 0
+  jump: 7
+  isGrounded: 0
 --- !u!54 &339041340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -424,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5711999, y: 0.26091003, z: -4.0499997}
+  m_LocalPosition: {x: -0.5711999, y: 0.26091003, z: -3.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -458,7 +461,7 @@ GameObject:
   - component: {fileID: 1512237225}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
