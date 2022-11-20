@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CharacterControl : MonoBehaviour
 {
-    float speed = 7f;
-    float sprint = 5f;
+    float speed = 5f;
+    float sprint = 3f;
     public bool ground;
     public float jump = 7f;
     public bool isGrounded;
+   
 
     // Start is called before the first frame update
     void Start()
