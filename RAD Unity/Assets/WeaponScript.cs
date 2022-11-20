@@ -12,6 +12,7 @@ public class WeaponScript : MonoBehaviour
     public AudioSource audioSourcee;
     public Camera kam;
     public float range = 15;
+    public Transform bulletspawn;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,11 @@ public class WeaponScript : MonoBehaviour
 
     void Shoot()
     {
+        audioSourcee.PlayOneShot(shot);
+        Instantiate(muzzleFlash, bulletspawn.position, bulletspawn.rotation );
+        
+
+
         RaycastHit hit;
 
         if(Physics.Raycast(kam.transform.position, kam.transform.forward, out hit, range))
