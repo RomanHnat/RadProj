@@ -13,7 +13,7 @@ public class WeaponScript : MonoBehaviour
     public Camera kam;
     public float range = 15;
     public Transform bulletspawn;
-
+    public float force = 155;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
             Shoot();
         }
@@ -34,13 +34,19 @@ public class WeaponScript : MonoBehaviour
         audioSourcee.PlayOneShot(shot);
         Instantiate(muzzleFlash, bulletspawn.position, bulletspawn.rotation );
         
-
+        
 
         RaycastHit hit;
 
         if(Physics.Raycast(kam.transform.position, kam.transform.forward, out hit, range))
         {
-            Debug.Log("GOT IT");
+            Debug.Log("GOT IT" );
+
+            if(hit.rigidbody != null)
+            {
+                hit.rigidbody.AddForce(-hit.normal * force);
+            }
+
         }
 
     }
